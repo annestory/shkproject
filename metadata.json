@@ -1,0 +1,6 @@
+{
+  "name": "Gemini AI 더빙 스튜디오",
+  "description": "Gemini TTS 모델을 활용하여 다양한 성우 목소리와 감정 표현으로 텍스트를 읽어주고 MP3로 다운로드할 수 있는 AI 더빙 스튜디오",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
