@@ -26,7 +26,7 @@ interface EmotionSelectorProps {
 
 // 아이콘 매핑 헬퍼
 const renderIcon = (iconName: string, isSelected: boolean) => {
-  const iconClass = `w-4 h-4 ${isSelected ? "text-indigo-600" : "text-slate-500"}`;
+  const iconClass = `w-4 h-4 ${isSelected ? "text-red-600" : "text-slate-500"}`;
   switch (iconName) {
     case "Smile":
       return <Smile className={iconClass} />;
@@ -87,7 +87,7 @@ export const EmotionSelector: React.FC<EmotionSelectorProps> = ({
               onClick={() => onSelectEmotion(emotion.id)}
               className={`flex flex-col items-center justify-center p-3 rounded-xl border-2 transition-all cursor-pointer text-center ${
                 isSelected
-                  ? "border-indigo-600 bg-indigo-50/50 shadow-xs"
+                  ? "border-red-600 bg-red-50/50 shadow-xs"
                   : "border-slate-200/80 bg-white hover:border-slate-300 hover:bg-slate-50"
               }`}
             >
@@ -100,7 +100,7 @@ export const EmotionSelector: React.FC<EmotionSelectorProps> = ({
               </div>
               <span
                 className={`text-xs font-bold leading-tight ${
-                  isSelected ? "text-indigo-900" : "text-slate-800"
+                  isSelected ? "text-red-900" : "text-slate-800"
                 }`}
               >
                 {emotion.labelKo}
@@ -120,7 +120,7 @@ export const EmotionSelector: React.FC<EmotionSelectorProps> = ({
             htmlFor="custom-direction-input"
             className="flex items-center text-xs font-semibold text-slate-700 space-x-1.5"
           >
-            <Sliders className="w-3.5 h-3.5 text-indigo-500" />
+            <Sliders className="w-3.5 h-3.5 text-red-500" />
             <span>디테일 연출 메모 (선택 사항)</span>
           </label>
           <span className="text-[11px] text-slate-400">
@@ -134,7 +134,7 @@ export const EmotionSelector: React.FC<EmotionSelectorProps> = ({
             value={customDirection}
             onChange={(e) => onChangeCustomDirection(e.target.value)}
             placeholder="예: 조금 쑥스러워하는 투로, 신비로운 비밀을 털어놓듯이, 끝을 올려 말하기 등"
-            className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition"
+            className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition"
           />
           {customDirection && (
             <button
@@ -150,3 +150,4 @@ export const EmotionSelector: React.FC<EmotionSelectorProps> = ({
     </section>
   );
 };
+

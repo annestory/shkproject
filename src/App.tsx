@@ -230,9 +230,9 @@ export default function App() {
         />
 
         {/* 하단 초보자 가이드 & 안내 카드 */}
-        <section className="bg-gradient-to-br from-indigo-50/50 via-slate-50 to-blue-50/50 rounded-2xl p-6 border border-indigo-100/80">
-          <h3 className="text-sm font-bold text-indigo-950 flex items-center mb-3">
-            <HelpCircle className="w-4 h-4 mr-1.5 text-indigo-600" />
+        <section className="bg-gradient-to-br from-red-50/50 via-slate-50 to-rose-50/50 rounded-2xl p-6 border border-red-100/80">
+          <h3 className="text-sm font-bold text-red-950 flex items-center mb-3">
+            <HelpCircle className="w-4 h-4 mr-1.5 text-red-600" />
             Gemini TTS 더빙 스튜디오 200% 활용 꿀팁
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-600 leading-relaxed">

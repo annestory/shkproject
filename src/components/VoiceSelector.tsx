@@ -20,7 +20,7 @@ export const VoiceSelector: React.FC<VoiceSelectorProps> = ({
     <section className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-2">
-          <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm">
+          <div className="w-7 h-7 rounded-lg bg-red-50 text-red-600 flex items-center justify-center font-bold text-sm">
             1
           </div>
           <div>
@@ -49,7 +49,7 @@ export const VoiceSelector: React.FC<VoiceSelectorProps> = ({
               onClick={() => onSelectVoice(voice.id)}
               className={`text-left relative flex flex-col justify-between p-3.5 rounded-xl border-2 transition-all cursor-pointer ${
                 isSelected
-                  ? "border-indigo-600 bg-indigo-50/40 shadow-sm"
+                  ? "border-red-600 bg-red-50/40 shadow-sm"
                   : "border-slate-200/80 bg-white hover:border-slate-300 hover:bg-slate-50/70"
               }`}
             >
@@ -62,7 +62,7 @@ export const VoiceSelector: React.FC<VoiceSelectorProps> = ({
                     {voice.nameKo.slice(0, 1)}
                   </div>
                   {isSelected ? (
-                    <div className="w-5 h-5 rounded-full bg-indigo-600 text-white flex items-center justify-center">
+                    <div className="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center">
                       <Check className="w-3.5 h-3.5 stroke-[3]" />
                     </div>
                   ) : (
@@ -78,7 +78,7 @@ export const VoiceSelector: React.FC<VoiceSelectorProps> = ({
                   </h3>
                 </div>
 
-                <p className="text-xs font-medium text-indigo-700 mb-2 line-clamp-1">
+                <p className="text-xs font-medium text-red-700 mb-2 line-clamp-1">
                   {voice.toneKo}
                 </p>
 
@@ -105,3 +105,4 @@ export const VoiceSelector: React.FC<VoiceSelectorProps> = ({
     </section>
   );
 };
+

@@ -151,7 +151,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ currentDubbing }) => {
   if (!currentDubbing) {
     return (
       <section className="bg-white rounded-2xl p-8 border border-slate-200/90 shadow-xs flex flex-col items-center justify-center text-center min-h-[260px]">
-        <div className="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-500 flex items-center justify-center mb-3">
+        <div className="w-14 h-14 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-3">
           <FileAudio className="w-7 h-7" />
         </div>
         <h3 className="text-base font-bold text-slate-800 mb-1">
@@ -166,9 +166,9 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ currentDubbing }) => {
   }
 
   return (
-    <section className="bg-white rounded-2xl p-5 sm:p-6 border border-indigo-200/90 shadow-sm relative overflow-hidden">
+    <section className="bg-white rounded-2xl p-5 sm:p-6 border border-red-200/90 shadow-sm relative overflow-hidden">
       {/* 배경 장식 그라데이션 라인 */}
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 via-blue-500 to-teal-400" />
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 via-rose-500 to-amber-500" />
 
       {/* 숨겨진 오디오 태그 */}
       <audio
@@ -187,7 +187,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ currentDubbing }) => {
       {/* 상단: 생성 메타데이터 배지 및 다운로드 알림 */}
       <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
         <div className="flex items-center space-x-2">
-          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800">
+          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800">
             성우: {currentDubbing.voiceLabelKo}
           </span>
           <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
@@ -219,7 +219,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ currentDubbing }) => {
       </div>
 
       {/* 비주얼라이저 (가상 오디오 파형 바) */}
-      <div className="flex items-end justify-center space-x-1 sm:space-x-1.5 h-12 mb-4 px-4 bg-gradient-to-b from-indigo-50/30 to-slate-50 rounded-xl py-2">
+      <div className="flex items-end justify-center space-x-1 sm:space-x-1.5 h-12 mb-4 px-4 bg-gradient-to-b from-red-50/30 to-slate-50 rounded-xl py-2">
         {Array.from({ length: 32 }).map((_, index) => {
           // 재생 중일 때 동적인 높이 시뮬레이션
           const seed = (index * 7 + 13) % 10;
@@ -235,9 +235,9 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ currentDubbing }) => {
               style={{ height }}
               className={`flex-1 max-w-[6px] rounded-full transition-all duration-150 ${
                 isCurrentSegment
-                  ? "bg-indigo-600"
+                  ? "bg-red-600"
                   : isPlaying
-                  ? "bg-indigo-300"
+                  ? "bg-red-300"
                   : "bg-slate-300"
               }`}
             />
@@ -254,7 +254,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ currentDubbing }) => {
           step={0.05}
           value={currentTime}
           onChange={handleSeek}
-          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-red-600"
         />
         <div className="flex justify-between text-xs text-slate-500 font-mono mt-1 px-0.5">
           <span>{formatTime(currentTime)}</span>
@@ -272,7 +272,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ currentDubbing }) => {
             type="button"
             id="audio-play-pause-button"
             onClick={togglePlay}
-            className="w-12 h-12 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white flex items-center justify-center shadow-md shadow-indigo-200 transition cursor-pointer"
+            className="w-12 h-12 rounded-full bg-red-600 hover:bg-red-700 text-white flex items-center justify-center shadow-md shadow-red-200 transition cursor-pointer"
           >
             {isPlaying ? (
               <Pause className="w-5 h-5" />
@@ -324,7 +324,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ currentDubbing }) => {
               onClick={() => handleRateChange(rate)}
               className={`px-2 py-1 text-xs rounded-md font-medium transition cursor-pointer ${
                 playbackRate === rate
-                  ? "bg-white text-indigo-700 font-bold shadow-xs"
+                  ? "bg-white text-red-700 font-bold shadow-xs"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -342,7 +342,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ currentDubbing }) => {
             onClick={handleDownloadMp3}
             className="flex-1 sm:flex-initial inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-black text-white font-bold text-xs shadow-sm transition cursor-pointer"
           >
-            <Download className="w-4 h-4 mr-1.5 text-indigo-400" />
+            <Download className="w-4 h-4 mr-1.5 text-red-400" />
             <span>MP3 다운로드</span>
           </button>
 

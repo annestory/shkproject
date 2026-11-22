@@ -94,7 +94,7 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({
       {/* 타이틀 및 상단 컨트롤 */}
       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
         <div className="flex items-center space-x-2">
-          <div className="w-7 h-7 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-sm">
+          <div className="w-7 h-7 rounded-lg bg-red-50 text-red-600 flex items-center justify-center font-bold text-sm">
             3
           </div>
           <div>
@@ -114,8 +114,8 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({
             onClick={() => setShowAiHelper(!showAiHelper)}
             className={`inline-flex items-center px-3 py-1.5 rounded-xl text-xs font-semibold transition border cursor-pointer ${
               showAiHelper
-                ? "bg-indigo-600 text-white border-indigo-600"
-                : "bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border-indigo-200/80"
+                ? "bg-red-600 text-white border-red-600"
+                : "bg-red-50 hover:bg-red-100 text-red-700 border-red-200/80"
             }`}
           >
             <Sparkles className="w-3.5 h-3.5 mr-1" />
@@ -154,13 +154,13 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({
 
       {/* AI 대본 도우미 패널 (토글형) */}
       {showAiHelper && (
-        <div className="mb-4 p-4 rounded-xl bg-gradient-to-r from-indigo-50/70 to-blue-50/70 border border-indigo-100">
+        <div className="mb-4 p-4 rounded-xl bg-gradient-to-r from-red-50/70 to-rose-50/70 border border-red-100">
           <div className="flex items-center justify-between mb-2">
-            <h3 className="text-xs font-bold text-indigo-900 flex items-center">
-              <Sparkles className="w-3.5 h-3.5 mr-1 text-indigo-600" />
+            <h3 className="text-xs font-bold text-red-900 flex items-center">
+              <Sparkles className="w-3.5 h-3.5 mr-1 text-red-600" />
               Gemini AI 대본 자동 생성기
             </h3>
-            <span className="text-[11px] text-indigo-700">
+            <span className="text-[11px] text-red-700">
               원하는 주제만 적으면 성우용 대본을 작성해드립니다
             </span>
           </div>
@@ -172,7 +172,7 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({
                 value={aiTopic}
                 onChange={(e) => setAiTopic(e.target.value)}
                 placeholder="예: 제주도 해변 여행 브이로그, 스마트워치 신제품 소개 광고"
-                className="w-full text-xs px-3 py-2 rounded-lg border border-indigo-200 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                className="w-full text-xs px-3 py-2 rounded-lg border border-red-200 bg-white focus:outline-none focus:ring-2 focus:ring-red-500/20"
                 onKeyDown={(e) => {
                   if (e.key === "Enter") handleRequestAiScript();
                 }}
@@ -182,7 +182,7 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({
               <select
                 value={aiGenre}
                 onChange={(e) => setAiGenre(e.target.value)}
-                className="w-full text-xs px-2.5 py-2 rounded-lg border border-indigo-200 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                className="w-full text-xs px-2.5 py-2 rounded-lg border border-red-200 bg-white focus:outline-none focus:ring-2 focus:ring-red-500/20"
               >
                 <option value="narration">나레이션 / 낭독</option>
                 <option value="vlog">유튜브 / 브이로그</option>
@@ -194,7 +194,7 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({
                 type="button"
                 onClick={handleRequestAiScript}
                 disabled={isGeneratingAiScript || !aiTopic.trim()}
-                className="px-3 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-medium text-xs whitespace-nowrap flex items-center transition cursor-pointer"
+                className="px-3 py-2 rounded-lg bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white font-medium text-xs whitespace-nowrap flex items-center transition cursor-pointer"
               >
                 {isGeneratingAiScript ? (
                   <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -221,7 +221,7 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({
             key={idx}
             type="button"
             onClick={() => onApplySample(sample)}
-            className="text-[11px] px-2.5 py-1 rounded-full bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-300 border border-slate-200 text-slate-700 whitespace-nowrap transition cursor-pointer"
+            className="text-[11px] px-2.5 py-1 rounded-full bg-slate-100 hover:bg-red-50 hover:text-red-700 hover:border-red-300 border border-slate-200 text-slate-700 whitespace-nowrap transition cursor-pointer"
           >
             {sample.title}
           </button>
@@ -237,7 +237,7 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({
           onChange={(e) => onChangeText(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="성우가 읽어줄 한국어 또는 다국어 텍스트를 입력해주세요.&#10;문장부호(쉼표, 마침표, 물음표)를 적절히 사용하면 더욱 자연스러운 호흡으로 낭독합니다.&#10;&#10;(단축키: Ctrl+Enter를 누르면 즉시 더빙 음성이 생성됩니다)"
-          className="w-full text-sm sm:text-base leading-relaxed p-4 rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-3 focus:ring-indigo-500/20 focus:border-indigo-600 transition placeholder:text-slate-400 font-sans"
+          className="w-full text-sm sm:text-base leading-relaxed p-4 rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-3 focus:ring-red-500/20 focus:border-red-600 transition placeholder:text-slate-400 font-sans"
         />
 
         {/* 하단 카운터 정보 */}
@@ -248,7 +248,7 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({
             </span>
             <span>
               예상 낭독 시간: 약{" "}
-              <strong className="text-indigo-600">{estimatedSeconds}초</strong>
+              <strong className="text-red-600">{estimatedSeconds}초</strong>
             </span>
           </div>
           <span className="text-[11px] text-slate-400 hidden sm:inline">
@@ -263,7 +263,7 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({
         id="generate-dubbing-button"
         onClick={onGenerate}
         disabled={isLoading || !text.trim()}
-        className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-indigo-600 via-blue-600 to-teal-500 hover:from-indigo-700 hover:via-blue-700 hover:to-teal-600 disabled:opacity-50 text-white font-bold text-base shadow-md shadow-indigo-100 transition-all flex items-center justify-center space-x-2 cursor-pointer"
+        className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-amber-600 hover:from-red-700 hover:via-rose-700 hover:to-amber-700 disabled:opacity-50 text-white font-bold text-base shadow-md shadow-red-100 transition-all flex items-center justify-center space-x-2 cursor-pointer"
       >
         {isLoading ? (
           <>
@@ -280,3 +280,4 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({
     </section>
   );
 };
+

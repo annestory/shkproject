@@ -70,7 +70,7 @@ export const HistoryList: React.FC<HistoryListProps> = ({
               key={item.id}
               className={`p-3.5 rounded-xl border transition flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 ${
                 isActive
-                  ? "border-indigo-500 bg-indigo-50/40"
+                  ? "border-red-500 bg-red-50/40"
                   : "border-slate-200 bg-white hover:border-slate-300"
               }`}
             >
@@ -83,7 +83,7 @@ export const HistoryList: React.FC<HistoryListProps> = ({
                   <span className="font-bold text-slate-900 bg-slate-100 px-2 py-0.5 rounded-md">
                     {item.voiceLabelKo}
                   </span>
-                  <span className="font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-md">
+                  <span className="font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded-md">
                     {item.emotionLabelKo}
                   </span>
                   <span className="text-[11px] text-slate-400 flex items-center">
@@ -103,7 +103,7 @@ export const HistoryList: React.FC<HistoryListProps> = ({
                   onClick={() => onSelect(item)}
                   className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
                     isActive
-                      ? "bg-indigo-600 text-white"
+                      ? "bg-red-600 text-white"
                       : "bg-slate-100 hover:bg-slate-200 text-slate-700"
                   }`}
                 >

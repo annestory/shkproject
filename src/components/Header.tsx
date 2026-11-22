@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-3">
         {/* 서비스 로고 및 타이틀 */}
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-blue-600 to-teal-400 flex items-center justify-center text-white shadow-md shadow-indigo-100">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 via-rose-600 to-amber-500 flex items-center justify-center text-white shadow-md shadow-red-100">
             <Mic className="w-5 h-5" />
           </div>
           <div>
@@ -27,8 +27,8 @@ export const Header: React.FC<HeaderProps> = ({
               <h1 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
                 Gemini AI 더빙 스튜디오
               </h1>
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/60">
-                <Sparkles className="w-3 h-3 mr-1 text-indigo-500" />
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-red-50 text-red-700 border border-red-200/60">
+                <Sparkles className="w-3 h-3 mr-1 text-red-500" />
                 Gemini 3.1 TTS
               </span>
             </div>
@@ -41,16 +41,17 @@ export const Header: React.FC<HeaderProps> = ({
         {/* 현재 설정된 옵션 현황 뱃지 */}
         <div className="flex items-center space-x-2 text-xs">
           <div className="flex items-center bg-slate-100 hover:bg-slate-200/80 px-2.5 py-1.5 rounded-lg border border-slate-200 text-slate-700 transition">
-            <Volume2 className="w-3.5 h-3.5 mr-1.5 text-indigo-600" />
+            <Volume2 className="w-3.5 h-3.5 mr-1.5 text-red-600" />
             <span className="text-slate-500 mr-1">선택 성우:</span>
             <span className="font-semibold text-slate-900">{selectedVoiceNameKo}</span>
           </div>
           <div className="flex items-center bg-slate-100 hover:bg-slate-200/80 px-2.5 py-1.5 rounded-lg border border-slate-200 text-slate-700 transition">
             <span className="text-slate-500 mr-1">감정 연출:</span>
-            <span className="font-semibold text-indigo-600">{selectedEmotionLabelKo}</span>
+            <span className="font-semibold text-red-600">{selectedEmotionLabelKo}</span>
           </div>
         </div>
       </div>
     </header>
   );
 };
+
